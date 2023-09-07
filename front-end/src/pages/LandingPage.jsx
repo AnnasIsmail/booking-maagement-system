@@ -47,6 +47,16 @@ const Section1 = styled.div`
   overflow: hidden;
 `;
 
+const Section2 = styled.div`
+  width: 100vw;
+  min-height: 350px;
+  background-color: #1976d2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+`;
+
 export default function LandingPage() {
   return (
     <Page>
@@ -70,6 +80,34 @@ export default function LandingPage() {
         </Content>
         <ImageIllustration src={illustration} alt="" />
       </Section1>
+      <Section2>
+        <div
+          style={{
+            margin: "2rem",
+            color: "white",
+            width: "100%",
+            paddingLeft: "2rem",
+          }}
+        >
+          <h1 style={{ margin: 0 }}>Tentang</h1>
+          <h2 style={{ margin: 0 }}>CIGI Futsal dan Badminton</h2>
+        </div>
+        <p
+          style={{
+            color: "#757575",
+            maxWidth: "70%",
+            backgroundColor: "#E2ECFF",
+            padding: "1.5em",
+            fontSize: "1.3em",
+            borderRadius: "20px",
+          }}
+        >
+          CiGi Futsal and Badminton menyediakan tempat untuk sewa lapangan
+          futsal dan badminton. Dengan fasilitas terbaik dan tim yang
+          berkomitmen, kami berupaya menciptakan lingkungan yang mendukung
+          pertumbuhan bakat dan kecintaan terhadap olahraga ini.
+        </p>
+      </Section2>
     </Page>
   );
 }
