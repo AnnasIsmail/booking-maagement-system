@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100vw;
-  max-width: 1280px;
+  width: 100%;
+  // max-width: 1280px;
   margin: auto;
 `;
 

@@ -9,23 +9,22 @@ const Page = styled.div`
 
 const ImageBackground = styled.img`
   width: 100%;
-  border-radius: 0 0 69px 69px;
+  border-radius: 0 0 3vw 3vw;
+  position: absolute;
+  min-height: 90vh;
+  object-fit: cover;
+  z-index: -1;
 `;
 
 const ImageLogo = styled.img`
-  top: 50px;
-  position: absolute;
   width: 150px;
-  left: calc(50vw - 75px);
-  right: calc(50vw - 75px);
+  margin-top: 100px;
 `;
 
 const Content = styled.div`
   color: white;
   font-size: 48px;
   font-weight: bold;
-  position: relative;
-  top: -600px;
   text-align: center;
   display: flex;
   gap: 20px;
@@ -35,13 +34,17 @@ const Content = styled.div`
 `;
 
 const ImageIllustration = styled.img`
-  position: relative;
-  top: -450px;
-  left: calc(50% - 219px);
+  width: 430px;
+  margin-bottom: -80px;
 `;
 
 const Section1 = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 `;
 
 export default function LandingPage() {
