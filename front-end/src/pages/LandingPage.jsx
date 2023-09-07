@@ -48,7 +48,7 @@ const Section1 = styled.div`
 `;
 
 const Section2 = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 350px;
   background-color: #1976d2;
   display: flex;
@@ -85,7 +85,7 @@ export default function LandingPage() {
           style={{
             margin: "2rem",
             color: "white",
-            width: "100%",
+            width: "calc(100% - 2rem)",
             paddingLeft: "2rem",
           }}
         >
