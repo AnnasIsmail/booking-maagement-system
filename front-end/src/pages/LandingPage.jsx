@@ -3,6 +3,7 @@ import styled from "styled-components";
 import background from "../assets/BG.jpg";
 import logo from "../assets/Logo CiGi 2 1.png";
 import illustration from "../assets/illustration.png";
+import HeaderSection from "../components/HeaderSection";
 const Page = styled.div`
   width: 100%;
 `;
@@ -11,7 +12,7 @@ const ImageBackground = styled.img`
   width: 100%;
   border-radius: 0 0 3vw 3vw;
   position: absolute;
-  min-height: 90vh;
+  height: 90vh;
   object-fit: cover;
   z-index: -1;
 `;
@@ -81,17 +82,11 @@ export default function LandingPage() {
         <ImageIllustration src={illustration} alt="" />
       </Section1>
       <Section2>
-        <div
-          style={{
-            margin: "2rem",
-            color: "white",
-            width: "calc(100% - 2rem)",
-            paddingLeft: "2rem",
-          }}
-        >
-          <h1 style={{ margin: 0 }}>Tentang</h1>
-          <h2 style={{ margin: 0 }}>CIGI Futsal dan Badminton</h2>
-        </div>
+        <HeaderSection
+          header="Tentang"
+          subHeader="CIGI Futsal dan Badminton"
+          color="white"
+        />
         <p
           style={{
             color: "#757575",
