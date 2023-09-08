@@ -3,6 +3,8 @@ import styled from "styled-components";
 import background from "../assets/BG.jpg";
 import logo from "../assets/Logo CiGi 2 1.png";
 import illustration from "../assets/illustration.png";
+import lapBadmin from "../assets/lapbadmin.jpg";
+import CardHeaderSubHeader from "../components/CardHeaderSubHeader";
 import HeaderSection from "../components/HeaderSection";
 const Page = styled.div`
   width: 100%;
@@ -58,6 +60,28 @@ const Section2 = styled.div`
   padding-bottom: 2rem;
 `;
 
+const Section3 = styled.div`
+  min-height: 350px;
+`;
+
+Section3.Content = styled.div`
+  display: grid;
+  margin: 1rem 2rem;
+  gap: 2vw;
+`;
+
+Section3.Content.Row1 = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw;
+`;
+
+Section3.Content.Row2 = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+`;
+
 export default function LandingPage() {
   return (
     <Page>
@@ -86,6 +110,7 @@ export default function LandingPage() {
           header="Tentang"
           subHeader="CIGI Futsal dan Badminton"
           color="white"
+          style={{ paddingLeft: "2rem", margin: "2rem" }}
         />
         <p
           style={{
@@ -103,6 +128,50 @@ export default function LandingPage() {
           pertumbuhan bakat dan kecintaan terhadap olahraga ini.
         </p>
       </Section2>
+      <Section3>
+        <HeaderSection
+          header="Fasilitas Sewa"
+          subHeader="CIGI Futsal dan Badminton"
+          color="#454545"
+          style={{ margin: "2rem", marginBottom: 0 }}
+        />
+        <Section3.Content>
+          <Section3.Content.Row1>
+            <CardHeaderSubHeader
+              src={lapBadmin}
+              header="Lapangan Badminton"
+              subHeader="kita memiliki 3 lapangan badminton yang bisa anda sewa"
+              backgroundColor="#E2ECFF"
+            />
+            <CardHeaderSubHeader
+              src={lapBadmin}
+              header="Lapangan Badminton"
+              subHeader="kita memiliki 3 lapangan badminton yang bisa anda sewa"
+              backgroundColor="#E2ECFF"
+            />
+            <CardHeaderSubHeader
+              src={lapBadmin}
+              header="Lapangan Badminton"
+              subHeader="kita memiliki 3 lapangan badminton yang bisa anda sewa"
+              backgroundColor="#E2ECFF"
+            />
+          </Section3.Content.Row1>
+          <Section3.Content.Row2>
+            <CardHeaderSubHeader
+              src={lapBadmin}
+              header="Lapangan Badminton"
+              subHeader="kita memiliki 3 lapangan badminton yang bisa anda sewa"
+              backgroundColor="#E2ECFF"
+            />
+            <CardHeaderSubHeader
+              src={lapBadmin}
+              header="Lapangan Badminton"
+              subHeader="kita memiliki 3 lapangan badminton yang bisa anda sewa"
+              backgroundColor="#E2ECFF"
+            />
+          </Section3.Content.Row2>
+        </Section3.Content>
+      </Section3>
     </Page>
   );
 }
