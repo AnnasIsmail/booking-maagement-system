@@ -1,6 +1,6 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { MainLayout } from "./layout";
-import { LandingPage, NotFound } from "./pages";
+import { BookingPage, LandingPage, NotFound } from "./pages";
 
 export default function Router() {
   return useRoutes([
@@ -9,6 +9,7 @@ export default function Router() {
       element: <MainLayout />,
       children: [
         { path: "/", element: <LandingPage /> },
+        { path: "/booking", element: <BookingPage /> },
         { path: "404", element: <NotFound /> },
         { path: "*", element: <Navigate to="/404" /> },
       ],
