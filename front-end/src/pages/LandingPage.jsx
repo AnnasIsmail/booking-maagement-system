@@ -127,6 +127,7 @@ export default function LandingPage() {
             <Button
               sx={{ backgroundColor: "white", color: "black" }}
               variant="contained"
+              href="/booking"
             >
               Booking kami
             </Button>
