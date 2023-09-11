@@ -1,4 +1,15 @@
-import { Divider, FormControlLabel, Radio, RadioGroup } from "@mui/material";
+import {
+  Button,
+  Chip,
+  Divider,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
+import dayjs from "dayjs";
 import styled from "styled-components";
 import logo from "../assets/Logo CiGi 2 1.png";
 
@@ -54,6 +65,8 @@ function BpRadio(props) {
 
 const Page = styled.div`
   width: 100%;
+  max-width: 1280px;
+  margin: auto;
 `;
 const Section1 = styled.div`
   width: 100%;
@@ -108,6 +121,66 @@ SelectBookingFacility.Description = styled.div`
   font-size: 13px;
   padding: 17px 14px;
 `;
+
+const Section3 = styled.div`
+  width: 100%;
+`;
+Section3.Header = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+`;
+Section3.Content = styled.div`
+  border: 2px dashed #7b61ff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 5px;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+`;
+Section3.Time = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  gap: 20px;
+`;
+Section3.action = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem;
+`;
+
+function generateButtons() {
+  const buttons = [];
+
+  for (let i = 6; i <= 24; i++) {
+    const time = i < 10 ? `0${i}:00` : `${i}:00`;
+    buttons.push(
+      <Button
+        key={time}
+        variant="outlined"
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "white",
+          boxShadow: "3px 5px 7px rgba(0, 0, 0, 0.25)",
+          borderWidth: "2px",
+          fontSize: "16px",
+          borderRadius: "5px",
+        }}
+      >
+        {time}
+      </Button>
+    );
+  }
+
+  return buttons;
+}
 
 export default function BookingPage() {
   return (
@@ -168,6 +241,31 @@ export default function BookingPage() {
           </ContainerSelectBookingFacility>
         </RadioGroup>
       </Section2>
+      <Section3>
+        <Section3.Header>
+          <Chip
+            label={
+              <div>
+                Booking untuk <b style={{ fontWeight: 800 }}>Lapangan Futsal</b>
+              </div>
+            }
+          />
+          <div>December 11, 6:00 PM</div>
+        </Section3.Header>
+        <Section3.Content>
+          <div style={{ boxShadow: "4px 17px 25px rgba(0, 0, 0, 0.25)" }}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <StaticDatePicker defaultValue={dayjs("2022-04-17")} />
+            </LocalizationProvider>
+          </div>
+          <Section3.Time>{generateButtons()}</Section3.Time>
+        </Section3.Content>
+        <Section3.action>
+          <Button variant="contained" color="success">
+            lanjut proses booking
+          </Button>
+        </Section3.action>
+      </Section3>
     </Page>
   );
 }
